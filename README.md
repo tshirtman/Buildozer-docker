@@ -11,7 +11,7 @@ Buildozer.spec
 
 If you don't have a buildozer.spec you can create one using
 
-    sudo docker -v $PWD:/buildozer tshirtman/buildozer buildozer init .
+    sudo docker run -v $PWD:/buildozer tshirtman/buildozer buildozer init .
 
 Then customize it in your favorite editor.
 
