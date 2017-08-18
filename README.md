@@ -22,12 +22,12 @@ Simply run the docker image with the directory containing buildozer.spec mounted
 
     sudo docker run -v $PWD:/buildozer/ tshirtman/buildozer
 
-The first build, or any build that changed your requirements in buildozer.spec will be slower, since the distribution has to be rebuilt (it's cached in your project's directory, so it'll be reused when possible). Builds that can reuse your distribution will be a lot faster.
+The first build, or any build since a change to your requirements in buildozer.spec will be slower, since the distribution has to be rebuilt (it's cached in your project's directory, so it'll be reused when possible). Builds that can reuse your distribution will be a lot faster.
 
 Installing
 ----------
 
-Sadly the docker doesn't see the android device for me, so you'll need adb another way to deploy
+Sadly the docker doesn't see the android device for me, so you'll need another way to deploy
 
 - adb
 
@@ -61,3 +61,13 @@ Ideally debugging should be done through adb logcat, but if you can't do it for 
     Config.set('kivy', 'log_dir', '/mnt/sdcard/kivy_logs'
 
 So you can open them from your file browser with your phone plugged to your computer.
+
+
+About
+=====
+
+For more information, see the buildozer and kivy projects on github.
+
+https://github.com/kivy/buildozer
+https://github.com/kivy/kivy
+
