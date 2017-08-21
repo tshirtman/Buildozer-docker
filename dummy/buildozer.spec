@@ -36,9 +36,11 @@ version = 0.1
 
 # (list) Application requirements
 # comma seperated e.g. requirements = sqlite3,kivy
-requirements = kivy,hostpython2
+requirements = kivy,hostpython2,plyer,requests,sqlite3,openssl,pyopenssl,pyasn1,pil,pytz,android,kivent_core,kivent_cymunk,kivent_particles,pyyaml,pyzmq,twisted,sqlalchemy,ffpyplayer,fontconfig,gevent,greenlet,icu,idna,psycopg2,pyicu,zeroconf,six,libgeos
 
-# (str) Custom source folders for requirements
+# failed: ffmpeg, harfbuzz,freetype,pycryptodome,protobuf_cpp,libffi,cffi,pymunk,cryptography,vlc (need ndk ver 13),kivent_polygen,pyethereum,
+
+# (str) Custom source folders for requirement
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
 

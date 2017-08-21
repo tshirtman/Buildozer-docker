@@ -27,7 +27,17 @@ The first build, or any build since a change to your requirements in buildozer.s
 Installing
 ----------
 
-Sadly the docker doesn't see the android device for me, so you'll need another way to deploy
+For buildozer to be able to install to your phone from docker, you need a few additional flags
+
+    sudo docker run --priviledged \
+      -v $PWD:/buildozer/ \
+      -v /dev/bus/usb:/dev/bus/usb \
+      -v /etc/udev/rules.d/:/etc/udev/rules.d/ \
+      tshirtman/buildozer buildozer android debug deploy run logcat
+
+This command will build, install, run and display logcat for easier debugging
+
+If you can't make it work, you'll need another way to deploy
 
 - adb
 
@@ -55,7 +65,7 @@ Sadly the docker doesn't see the android device for me, so you'll need another w
 Debugging
 ---------
 
-Ideally debugging should be done through adb logcat, but if you can't do it for some reason, I advise configuring kivy to output to a file on your phone memory, this can be achieved by setting the Config before any other kivy import in your main.py
+Ideally debugging should be done through "buildozer android logcat", but if you can't do it for some reason, I advise configuring kivy to output to a file on your phone memory, this can be achieved by setting the Config before any other kivy import in your main.py
 
     from kivy.config import Config
     Config.set('kivy', 'log_dir', '/mnt/sdcard/kivy_logs'
