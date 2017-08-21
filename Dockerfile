@@ -12,7 +12,8 @@ USER buildozer
 
 RUN \
   cd /buildozer/dummy && \
-  buildozer android debug
+  buildozer android debug && \
+  cd .. && rm -rf dummy
 
 VOLUME /buildozer/
 
