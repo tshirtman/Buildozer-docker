@@ -68,7 +68,7 @@ Debugging
 Ideally debugging should be done through "buildozer android logcat", but if you can't do it for some reason, I advise configuring kivy to output to a file on your phone memory, this can be achieved by setting the Config before any other kivy import in your main.py
 
     from kivy.config import Config
-    Config.set('kivy', 'log_dir', '/mnt/sdcard/kivy_logs'
+    Config.set('kivy', 'log_dir', '/mnt/sdcard/kivy_logs')
 
 So you can open them from your file browser with your phone plugged to your computer.
 
