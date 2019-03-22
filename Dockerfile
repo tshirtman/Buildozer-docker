@@ -11,6 +11,7 @@ RUN mkdir -p /buildozer/ \
  && touch main.py \
  && yes | buildozer init . \
  && sed -i 's/warn_on_root.*/warn_on_root = 0/' buildozer.spec \
+ && sed -i 's/log_level.*/log_level = 2/' buildozer.spec \
  && yes | buildozer android debug
 
 VOLUME /buildozer/
