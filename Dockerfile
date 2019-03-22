@@ -10,6 +10,7 @@ RUN apt-get update \
  && chmod +x /usr/bin/virtualenv
 
 RUN mkdir -p /buildozer/ \
+ && cd /buildozer/ \
  && echo "print('success')" > main.py \
  && yes | buildozer init . \
  && sed -i 's/warn_on_root.*/warn_on_root = 0/' buildozer.spec \
