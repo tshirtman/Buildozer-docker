@@ -5,7 +5,9 @@ RUN apt-get update \
     git zlib1g-dev openjdk-8-jdk-headless autoconf curl libtool \
     libpq-dev libssl-dev ccache unzip zip python3 \
     python3-virtualenv python3-pip pkg-config cmake libffi-dev \
- && pip3 install cython buildozer
+ && pip3 install cython buildozer \
+ && echo "python3 -m virtualenv" > /usr/bin/virtualenv \
+ && chmod +x /usr/bin/virtualenv
 
 RUN mkdir -p /buildozer/ \
  && touch main.py \
