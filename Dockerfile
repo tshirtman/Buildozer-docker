@@ -9,7 +9,7 @@ RUN apt-get update \
 
 RUN mkdir -p /buildozer/ \
  && touch main.py \
- && buildozer init . \
+ && yes | buildozer init . \
  && sed -i 's/warn_on_root.*/warn_on_root = 0/' buildozer.spec \
  && yes | buildozer android debug
 
